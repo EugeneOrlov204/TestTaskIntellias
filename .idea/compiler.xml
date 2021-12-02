@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="TestTaskIntellias.app" target="11" />
+      <module name="TestTaskIntellias.data" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
