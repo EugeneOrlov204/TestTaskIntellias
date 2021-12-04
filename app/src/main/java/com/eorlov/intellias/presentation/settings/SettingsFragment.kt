@@ -1,7 +1,7 @@
 package com.eorlov.intellias.presentation.settings
 
-import com.eorlov.intellias.base.BaseFragment
 import com.eorlov.domain.databinding.FragmentSettingsBinding
+import com.eorlov.intellias.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

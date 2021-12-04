@@ -1,7 +1,7 @@
 package com.eorlov.intellias.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.eorlov.domain.R
 import dagger.hilt.android.AndroidEntryPoint
 

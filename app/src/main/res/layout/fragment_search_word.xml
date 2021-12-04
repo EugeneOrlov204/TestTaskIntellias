@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextSearchField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_some_word" />
@@ -60,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/textViewPhonetic" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMeanings"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/margin_normal_16dp"
