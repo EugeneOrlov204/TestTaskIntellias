@@ -18,11 +18,12 @@ class SearchWordViewModel @Inject constructor(
 ) : ViewModel() {
 
     val meaningsListLiveData = MutableLiveData<WordInfo>()
-    val loadingLiveData = MutableLiveData(true)
+    val loadingLiveData = MutableLiveData(false)
     val errorLiveData = MutableLiveData<String>()
 
     fun getWord(word: String) {
         viewModelScope.launch {
+            loadingLiveData.postValue(true)
             when (val wordResult = getNewWordUseCase.invoke(word)) {
                 is Result.Success -> {
                     meaningsListLiveData.postValue(
@@ -35,7 +36,6 @@ class SearchWordViewModel @Inject constructor(
                     errorLiveData.postValue(wordResult.exception.message)
                 }
                 else -> {
-                    println("Something went wrong!")
                 }
             }
         }

@@ -3,4 +3,5 @@
     <string name="search">Search</string>
     <string name="enter_some_word">Enter some word</string>
     <string name="meanings">Meanings</string>
+    <string name="not_found_word_message">There is no such word in the dictionary!</string>
 </resources>

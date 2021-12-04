@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
@@ -39,4 +40,12 @@ abstract class BaseFragment<VBinding : ViewBinding>(
     protected open fun setListeners() {}
     protected open fun setObservers() {}
     protected open fun initialize() {}
+
+    protected open fun lockUI() {
+        activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+    }
+
+    protected open fun unlockUI() {
+        activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
+    }
 }

@@ -13,6 +13,7 @@
         android:theme="@style/Theme.TestTaskIntellias">
         <activity
             android:name="com.eorlov.intellias.presentation.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
