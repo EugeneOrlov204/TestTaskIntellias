@@ -1,6 +1,5 @@
 package com.eorlov.intellias.data.api
 
-import com.eorlov.intellias.domain.entities.Word
 import com.eorlov.intellias.domain.entities.Words
 import retrofit2.Response
 import retrofit2.http.GET

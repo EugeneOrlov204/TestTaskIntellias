@@ -1,11 +1,9 @@
 package com.eorlov.intellias.data.repositories.words
 
-import com.eorlov.intellias.domain.entities.Word
+import com.eorlov.intellias.data.entities.WordData
 
 interface WordLocalDataSource {
-    suspend fun add(word: Word)
+    suspend fun get(word: String): WordData?
 
-    suspend fun readAll(): List<Word>
-
-    suspend fun remove(word: Word)
+    suspend fun insert(wordData: WordData)
 }

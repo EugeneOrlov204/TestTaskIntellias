@@ -1,5 +1,5 @@
 package com.eorlov.intellias.data.entities
 
-data class Definition(
+data class DefinitionData(
     val definition: String
 )

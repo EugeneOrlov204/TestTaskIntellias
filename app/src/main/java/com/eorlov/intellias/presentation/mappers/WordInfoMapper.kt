@@ -1,25 +1,25 @@
 package com.eorlov.intellias.presentation.mappers
 
 import com.eorlov.intellias.domain.entities.Word
-import com.eorlov.intellias.presentation.entities.Definition
-import com.eorlov.intellias.presentation.entities.Meaning
+import com.eorlov.intellias.presentation.entities.DefinitionInfo
+import com.eorlov.intellias.presentation.entities.MeaningInfo
 import com.eorlov.intellias.presentation.entities.WordInfo
 import javax.inject.Inject
 
 class WordInfoMapper @Inject constructor() {
     fun fromWordToWordInfo(word: Word): WordInfo {
-        val meanings = mutableListOf<Meaning>()
+        val meanings = mutableListOf<MeaningInfo>()
 
         for (meaning in word.meanings) {
 
-            val definitions = mutableListOf<Definition>()
+            val definitions = mutableListOf<DefinitionInfo>()
 
             for (definition in meaning.definitions) {
-                definitions.add(Definition(definition.definition))
+                definitions.add(DefinitionInfo(definition.definition))
             }
 
             meanings.add(
-                Meaning(
+                MeaningInfo(
                     definitions,
                     meaning.partOfSpeech
                 )
@@ -29,7 +29,7 @@ class WordInfoMapper @Inject constructor() {
         return WordInfo(
             word = word.word,
             phonetic = word.phonetics[0].text,
-            meanings = meanings
+            meaningInfos = meanings
         )
     }
 }

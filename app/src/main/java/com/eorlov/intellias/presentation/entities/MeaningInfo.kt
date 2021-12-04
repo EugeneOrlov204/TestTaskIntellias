@@ -1,6 +1,6 @@
 package com.eorlov.intellias.presentation.entities
 
-data class Meaning(
-    val definitions: List<Definition>,
+data class MeaningInfo(
+    val definitionInfos: List<DefinitionInfo>,
     val partOfSpeech: String
 )

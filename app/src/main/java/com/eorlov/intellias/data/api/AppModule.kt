@@ -1,5 +1,7 @@
 package com.eorlov.intellias.data.api
 
+import com.eorlov.intellias.data.mappers.WordDataMapper
+import com.eorlov.intellias.data.repositories.words.WordLocalDataSource
 import com.eorlov.intellias.data.repositories.words.WordRemoteDataSource
 import com.eorlov.intellias.data.repositories.words.WordRemoteDataSourceImpl
 import com.eorlov.intellias.data.repositories.words.WordRepositoryImpl
@@ -49,8 +51,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRepository(remoteDataSource: WordRemoteDataSource): WordRepository =
-        WordRepositoryImpl(remoteDataSource)
+    fun provideRepository(
+        remoteDataSource: WordRemoteDataSource,
+        localDataSource: WordLocalDataSource,
+        mapper: WordDataMapper
+    ): WordRepository =
+        WordRepositoryImpl(remoteDataSource, localDataSource, mapper)
 
     @Provides
     @Singleton

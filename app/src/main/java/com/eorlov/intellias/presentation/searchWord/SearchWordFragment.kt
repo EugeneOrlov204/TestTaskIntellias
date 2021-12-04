@@ -45,7 +45,7 @@ class SearchWordFragment :
         viewModel.run {
             meaningsListLiveData.observe(viewLifecycleOwner) {
                 view?.hideKeyboard()
-                wordAdapter.submitList(it.meanings.toMutableList())
+                wordAdapter.submitList(it.meaningInfos.toMutableList())
                 binding.run {
                     textViewMeanings.text = getMeaningsText(it)
                     textViewWord.text = getWordText(it)
@@ -97,6 +97,6 @@ class SearchWordFragment :
         "Word: ${it.word}"
 
     private fun getMeaningsText(it: WordInfo) =
-        if (it.meanings.isNotEmpty()) context?.getString(R.string.meanings)
+        if (it.meaningInfos.isNotEmpty()) context?.getString(R.string.meanings)
         else ""
 }
